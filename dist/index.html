@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#172920">
+  <title>Canopy Vanguard</title>
+  <meta name="description" content="Defend an elven settlement from the canopy in a mobile stealth archery game.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="landscape.css">
+  <link rel="stylesheet" href="minimal-ui.css">
+</head>
+<body>
+  <div id="world"></div>
+  <div id="vignette"></div>
+  <canvas id="cues" aria-hidden="true"></canvas>
+  <div id="stick" aria-hidden="true"><i id="thumb"></i></div>
+
+  <header>
+    <div class="brand"><span class="sigil">♧</span><div>CANOPY<span>V A N G U A R D</span></div></div>
+    <div class="wave">FOREST DEFENSE <b id="wave">WAVE 01</b></div>
+    <button id="pause" aria-label="Pause game">Ⅱ</button>
+  </header>
+
+  <aside id="mission">
+    <small>THE SILENT BORDER</small>
+    <h2>Keep the forest’s secret.</h2>
+    <p id="objective">Intercept the warband before it reaches the village.</p>
+    <div class="stats"><span><b id="remaining">8</b> INVADERS</span><span><b id="kills">0</b> FELLED</span></div>
+  </aside>
+
+  <div id="status">
+    <span id="stealth">HIDDEN IN THE CANOPY</span>
+    <div class="meter"><i id="exposure"></i></div>
+    <small id="treehealth">PERCH SECURE</small>
+  </div>
+  <div id="reticle"><i></i><span id="targetname"></span></div>
+  <div id="draw"><i></i></div>
+  <div id="notice"></div>
+  <footer>
+    <div class="vitals">
+      <span>VANGUARD <b id="hp">100</b></span><div class="meter"><i id="health"></i></div>
+      <span>VILLAGE GATE <b id="gate">100%</b></span>
+    </div>
+    <div id="context">Approach a tree to climb</div>
+    <div class="arrows"><b id="arrows">24</b><span>ARROWS<br><small>QUIVER</small></span></div>
+  </footer>
+
+  <div id="controls">WASD · Move &nbsp; Mouse · Look &nbsp; Hold / release click · Shoot &nbsp; E / Space · Contextual climb or leap</div>
+  <div id="zonehints"><span>DRAG TO MOVE · TAP TO TRAVERSE</span><span>DRAG TO LOOK · TAP/HOLD TO FIRE</span></div>
+
+  <section id="overlay">
+    <div class="panel">
+      <small id="eyebrow">A FOREST UNDER SIEGE</small>
+      <h1 id="title">Canopy<br><em>Vanguard</em></h1>
+      <p id="intro">The forest is your stronghold. Its branches, your escape.<br>Break the invading warband before they find your people.</p>
+      <div id="brief">
+        <div><b>LEFT THUMB</b><p>Drag to move. A short tap interacts with the forest.</p></div>
+        <div><b>RIGHT THUMB</b><p>Drag to look. Tap near an enemy for a snapshot. Hold still to draw, then release. Advanced techniques are learned in the village.</p></div>
+        <div><b>TURN UP THE SOUND</b><p>Goblins call out when they choose a path, spot prey, attack, rally, taunt, or die.</p></div>
+      </div>
+      <button id="start">Enter in landscape <span>→</span></button>
+      <p class="fine">The game will request fullscreen landscape where your browser allows it. Both touch zones remain active together.</p>
+    </div>
+  </section>
+
+  <section id="rotate" aria-live="polite">
+    <div class="rotate-device" aria-hidden="true"><i></i></div>
+    <b>Turn your device sideways</b>
+    <p>Canopy Vanguard is played in landscape. Your left thumb moves; your right thumb looks and fires.</p>
+  </section>
+
+  <script type="module" src="game.js"></script>
+</body>
+</html>

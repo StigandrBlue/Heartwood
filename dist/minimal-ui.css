@@ -1,0 +1,12 @@
+/* Discovery and forest evidence replace persistent instruction text during play. */
+#mission,
+#context,
+#zonehints,
+#controls {
+  display: none !important;
+}
+
+body.village #reticle,
+body.village #draw {
+  opacity: 1;
+}

@@ -1,0 +1,32 @@
+#rotate{display:none;position:fixed;inset:0;z-index:100;background:radial-gradient(circle at 50% 36%,#244b3d,#0a201c 72%);padding:30px;text-align:center;align-items:center;justify-content:center;flex-direction:column;color:#f0ecd9}
+#rotate b{font:400 28px Georgia,serif;letter-spacing:.02em}
+#rotate p{max-width:330px;color:#c5d0bd;font-size:14px;line-height:1.6}
+.rotate-device{width:58px;height:92px;border:2px solid #dce4c5;border-radius:9px;margin:0 0 26px;position:relative;animation:turn-device 1.8s ease-in-out infinite}
+.rotate-device i{position:absolute;width:5px;height:5px;border-radius:50%;background:#dce4c5;left:50%;bottom:5px;transform:translateX(-50%)}
+body.playing.portrait #rotate{display:flex}
+
+@keyframes turn-device{0%,18%{transform:rotate(0)}55%,82%{transform:rotate(90deg)}100%{transform:rotate(0)}}
+
+@media (orientation:landscape) and (pointer:coarse){
+  #overlay{padding:max(12px,env(safe-area-inset-top)) max(30px,env(safe-area-inset-right)) max(12px,env(safe-area-inset-bottom)) max(30px,env(safe-area-inset-left))}
+  #overlay .panel{width:100%;max-width:none;margin:0;display:grid;grid-template-columns:minmax(210px,.8fr) minmax(330px,1.25fr);column-gap:36px;align-items:center}
+  #eyebrow,h1,#intro,#start{grid-column:1}
+  #eyebrow{align-self:end}
+  h1{font-size:clamp(42px,10vh,68px);margin:8px 0}
+  #intro{font-size:12px;margin:0 0 10px}
+  #brief{grid-column:2;grid-row:1/5;margin:0;gap:9px}
+  #brief p{font-size:12px;line-height:1.45}
+  #start{min-height:44px;padding:10px 16px;margin-top:5px}
+  .fine{grid-column:2;font-size:10px;align-self:end;margin:4px 0 0}
+  header{top:max(8px,env(safe-area-inset-top));left:max(20px,env(safe-area-inset-left));right:max(20px,env(safe-area-inset-right))}
+  #mission{top:max(58px,calc(env(safe-area-inset-top) + 48px));left:max(20px,env(safe-area-inset-left));max-width:210px}
+  #status{top:max(62px,calc(env(safe-area-inset-top) + 52px));right:max(20px,env(safe-area-inset-right))}
+  #map{width:72px;height:72px;right:max(20px,env(safe-area-inset-right));bottom:max(68px,calc(env(safe-area-inset-bottom) + 54px))}
+  footer{bottom:max(13px,env(safe-area-inset-bottom))}
+  #context{bottom:max(49px,calc(env(safe-area-inset-bottom) + 38px));font-size:11px}
+  #zonehints{bottom:max(23px,calc(env(safe-area-inset-bottom) + 12px));left:18%;right:15%;font-size:8px}
+}
+
+@media (orientation:portrait) and (pointer:coarse){
+  body.playing #overlay{visibility:hidden}
+}
